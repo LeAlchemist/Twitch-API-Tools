@@ -402,10 +402,22 @@ MonoBehaviour:
   emoteStartPoint: {fileID: 1670734281}
   onChatMessage:
     m_PersistentCalls:
-      m_Calls: []
-  user: User Name of the Bot Here
-  OAuth: OAuth Key Here
-  channel: Streamer Channel Here
+      m_Calls:
+      - m_Target: {fileID: 2137496205}
+        m_TargetAssemblyTypeName: TwitchChat, Assembly-CSharp
+        m_MethodName: onChatMessage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  user: 
+  Oauth: 
+  channel: 
   seperateEmotes: []
 --- !u!4 &992027506
 Transform:

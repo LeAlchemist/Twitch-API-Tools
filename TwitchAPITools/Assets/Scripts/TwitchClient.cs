@@ -10,18 +10,25 @@ using UnityEngine.Networking;
 
 public class TwitchClient : MonoBehaviour
 {
+    [Tooltip("Chatbox Object Here")]
     public GameObject chat;
-    public GameObject emote;    
+    [Tooltip("Emote Prefab Object Goes Here")]
+    public GameObject emote;
+    [Tooltip("Emote Spawn Location")]
     public Transform emoteStartPoint;
+    [Tooltip("Module Events Go Here")]
     public UnityEvent<string, string> onChatMessage;
     TcpClient twitch;
     StreamReader reader;
     StreamWriter writer;
     const string URL = "irc.chat.twitch.tv";
     const int PORT = 6667;
-    public string user = "User Name of the Bot Here";
-    public string OAuth = "OAuth Key Here";
-    public string channel = "Streamer Channel Here";
+    [Tooltip("User Name of the Bot Here")]
+    public string user;
+    [Tooltip("OAuth Key Here")]
+    public string Oauth;
+    [Tooltip("Streamer Channel Name Here")]
+    public string channel;
     float pingCounter = 0;
     public string[] seperateEmotes;
 
@@ -167,7 +174,7 @@ public class TwitchClient : MonoBehaviour
         reader = new StreamReader(twitch.GetStream());
         writer = new StreamWriter(twitch.GetStream());
 
-        writer.WriteLine("PASS " + OAuth);
+        writer.WriteLine("PASS " + Oauth);
         writer.WriteLine("NICK " + user);
         writer.WriteLine("User " + user + " 8 * :" + user);
         writer.WriteLine("JOIN #" + channel.ToLower());
