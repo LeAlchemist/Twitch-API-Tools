@@ -415,6 +415,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  twitchUser: {fileID: 11400000, guid: 66662acf5af862c449523e70c604f963, type: 2}
   user: 
   Oauth: 
   channel: 

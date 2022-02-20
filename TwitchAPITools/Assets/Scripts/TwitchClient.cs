@@ -23,11 +23,9 @@ public class TwitchClient : MonoBehaviour
     StreamWriter writer;
     const string URL = "irc.chat.twitch.tv";
     const int PORT = 6667;
-    [Tooltip("User Name of the Bot Here")]
+    public TwitchUser twitchUser;
     public string user;
-    [Tooltip("OAuth Key Here")]
     public string Oauth;
-    [Tooltip("Streamer Channel Name Here")]
     public string channel;
     float pingCounter = 0;
     public string[] seperateEmotes;
@@ -36,6 +34,10 @@ public class TwitchClient : MonoBehaviour
     void Start()
     {
         ConnectToTwitch();
+
+        user = twitchUser.userName;
+        Oauth = twitchUser.Oauth;
+        channel = twitchUser.channelName;
     }
 
     void Awake() 
